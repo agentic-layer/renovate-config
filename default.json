@@ -83,6 +83,19 @@
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "agentic-layer/agent-gateway-krakend-operator",
       "versioningTemplate": "semver"
+    },
+    {
+      "customType": "regex",
+      "description": "Update tool-gateway-agentgateway version",
+      "managerFilePatterns": [
+        "/^Tiltfile$/"
+      ],
+      "matchStrings": [
+        "tool_gateway_agentgateway_install\\([^)]*version='(?<currentValue>[^']+)'[^)]*\\)"
+      ],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "agentic-layer/tool-gateway-agentgateway",
+      "versioningTemplate": "semver"
     }
   ]
 }
