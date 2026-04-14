@@ -96,6 +96,32 @@
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "agentic-layer/tool-gateway-agentgateway",
       "versioningTemplate": "semver"
+    },
+    {
+      "customType": "regex",
+      "description": "Update agentgateway version",
+      "managerFilePatterns": [
+        "/^Tiltfile$/"
+      ],
+      "matchStrings": [
+        "tool_gateway_agentgateway_install\\([^)]*agentgateway_version='(?<currentValue>[^']+)'[^)]*\\)"
+      ],
+      "depNameTemplate": "agentgateway/agentgateway",
+      "datasourceTemplate": "github-releases",
+      "extractVersionTemplate": "^v(?<version>.*)$"
+    },
+    {
+      "customType": "regex",
+      "description": "Update testbench version",
+      "managerFilePatterns": [
+        "/^Tiltfile$/"
+      ],
+      "matchStrings": [
+        "testbench_install\\([^)]*version='(?<currentValue>[^']+)'[^)]*\\)"
+      ],
+      "depNameTemplate": "agentic-layer/testbench",
+      "datasourceTemplate": "github-releases",
+      "extractVersionTemplate": "^v(?<version>.*)$"
     }
   ]
 }
