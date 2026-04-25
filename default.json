@@ -30,6 +30,11 @@
     {
       "matchCategories": ["ci", "docker"],
       "automerge": true
+    },
+    {
+      "matchManagers": ["mise"],
+      "automerge": true,
+      "schedule": ["before 3am on Monday"]
     }
   ],
   "customManagers": [
